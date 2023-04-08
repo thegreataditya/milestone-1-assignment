@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List items</title>
+    <style>
+        button{
+            padding: 3px 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="con"></ul>
+    <p class="eol"></p>
+    <button>Add</button>
+
+    <script>
+        let ul = document.querySelector(".con");
+        let btn = document.querySelector("button");
+        let p = document.querySelector(".eol");
+        let arr = ["JavaScript", "Python", "Java", "Swift", "Cpp", "C", "Objecive C", "Ruby", "Pearl", "Matlab", "Go", "Kotlin"];
+        let counter = 0;
+
+        function addListItem(){
+            if(counter < arr.length){
+            let li = document.createElement("li");
+            li.innerHTML = arr[counter];
+            ul.appendChild(li);
+            counter++;
+            }else{
+             p.innerHTML = "All the items have been added successfully";   
+            }
+        }
+
+        btn.addEventListener("click", addListItem);
+    </script>
+</body>
+</html>

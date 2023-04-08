@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Spliter</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter the price of dish" id="price">
+    <input type="number" placeholder="Enter number of people" id="people">
+    <button id="btn">Calculate</button>
+
+    <script>
+        let price = document.querySelector("#price");
+        let people = document.querySelector("#people");
+        let btn = document.querySelector("#btn");
+        let output = document.querySelector("#out");
+
+        function calculate(){
+            let pph = Number(price.value)/Number(people.value);
+            let result = {
+                total_price: price.value,
+                price_per_head: pph
+            };
+
+            console.log(result);
+        }
+
+        btn.addEventListener("click", calculate);
+    </script>
+</body>
+</html>

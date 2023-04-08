@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change BG Color</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button id="btn">Change Bg Color</button>
+
+    <script>
+        let values = "0123456789abcdef";
+        let btn = document.getElementById("btn");
+
+        let randomColor = () => {
+            let color = "#";
+            for(let i=0; i<6; i++){
+                color += values[Math.floor(Math.random() * 16)];
+            }
+
+            return color;
+        }
+
+        let changeBgColor = () => {
+            document.body.style.backgroundColor = randomColor();
+        }
+
+        btn.addEventListener("click", changeBgColor);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Cost Calculator</title>
+</head>
+<body>
+    <select id="car_type">
+        <option value="economy">economy</option>
+        <option value="midsize">midsize</option>
+        <option value="luxury">luxury</option>
+    </select>
+    <input type="number" placeholder="Enter number of days" id="days">
+    <button id="btn">Calculate</button>
+    <h2 id="out"></h2>
+
+    <script>
+        let days = document.querySelector("#days");
+        let carType = document.querySelector("#car_type");
+        let btn = document.querySelector("#btn");
+        let output = document.querySelector("#out");
+
+        function calculate(){
+            let rent = 0;
+            if(String(carType.value) === "economy"){
+                rent = 4000 * Number(days.value);
+            }else if(String(carType.value) === "midsize"){
+                rent = 10000 * Number(days.value);
+            }else{
+                rent = 20000 * Number(days.value);
+            }
+            output.innerHTML = rent;
+            console.log(rent);
+        }
+
+        btn.addEventListener("click", calculate);
+    </script>
+</body>
+</html>

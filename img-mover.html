@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movable Img</title>
+    <style>
+        img{
+            position: absolute;
+            height: 120px;
+            width: 100px;
+            border-radius: 10px;
+            transition: all 0.1s;
+        }
+
+        body{
+            height: 100vh;
+            margin: 0;
+            width: 100vw;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="./img.png" alt="image" id="img">
+
+    <script>
+        let img = document.querySelector("#img");
+
+        window.addEventListener("load", () => {
+            img.style.top = "160px";
+            img.style.left = "200px";
+        })
+
+        window.addEventListener("keydown", (e) => {
+            switch(e.key){
+                case "ArrowUp":
+                    img.style.top = parseInt(img.style.top) - 10 + "px";
+                    break;
+                case "ArrowLeft":
+                    img.style.left = parseInt(img.style.left) - 10 + "px";
+                    break; 
+                case "ArrowRight":
+                    img.style.left = parseInt(img.style.left) + 10 + "px";
+                    break;
+                case "ArrowDown":
+                    img.style.top = parseInt(img.style.top) + 10 + "px"; 
+                    break;       
+            }
+        });
+    </script>
+</body>
+</html>

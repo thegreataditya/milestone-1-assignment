@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farenheit to Celsius</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter temp. in Farenheit" id="f">
+    <button id="btn">Convert</button>
+    <h2 id="out"></h2>
+
+    <script>
+        let farenheit = document.querySelector("#f");
+        let btn = document.querySelector("#btn");
+        let output = document.querySelector("#out");
+
+        function convert(){
+            let celsius = (Number(farenheit.value)-32) * 5/9;
+            output.innerHTML = celsius;
+            console.log(celsius);
+        }
+
+        btn.addEventListener("click", convert);
+    </script>
+</body>
+</html>

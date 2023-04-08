@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word highlighter</title>
+    <style>
+        span{
+            background-color: yellow;
+            padding: 2px;
+        }
+        body{
+            line-height: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad beatae veniam rerum corrupti quo sequi pariatur explicabo molestiae laudantium. Nobis quae, animi sed fugiat debitis fugit alias, voluptatem hic, fuga illum asperiores perferendis nihil voluptates. Praesentium, ex, quas ea accusamus voluptate nemo earum aut, aspernatur tempore quod facere officia velit aperiam sint alias! Repellat, eos? Illum voluptatum, laborum aliquam quod est eius rerum aut pariatur odio natus blanditiis corrupti voluptate quo, earum ea atque, quos numquam! Adipisci molestias ad, odit distinctio consectetur, optio veritatis architecto eum beatae iste sint eaque libero, sed maxime ducimus nemo error? Perferendis tenetur ullam qui.</p>
+
+    <script>
+        let p = document.querySelector("p");
+
+        let arr = p.innerHTML.split(" ");
+
+        for(let i=0; i<arr.length;i++){
+            if(arr[i].length > 8){
+               arr[i] = "<span>" + arr[i] + "</span>";
+            }
+        }
+
+        p.innerHTML = arr.join(" ");
+    </script>
+</body>
+</html>

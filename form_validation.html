@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculater</title>
+    <style>
+
+      button {
+        display: block;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 15px;
+        margin: 2rem 0;
+        background-color: brown;
+        color: whitesmoke;
+      }
+
+      button:hover {
+        color: brown;
+        background-color: whitesmoke;
+      }
+
+      input {
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 10vh 25px 10px;
+        width: 15rem;
+      }
+
+      p.error {
+        color: red;
+      }
+
+      p.pass {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="email">Enter Email: </label>
+    <input type="text" id="email" />
+    <br />
+    <label for="password">Enter Password: </label>
+    <input type="password" id="password" />
+    <p id="out"></p>
+
+    <button id="btn">Submit</button>
+
+    <script>
+      let email = document.querySelector("#email");
+      let pass = document.querySelector("#password");
+      let btn = document.querySelector("#btn");
+      let p = document.querySelector("#out");
+
+      function validate() {
+        if (
+          String(email.value).includes("@") &&
+          String(pass.value).length >= 8
+        ) {
+          p.className = "pass";
+          p.innerHTML = "Valid email and password!";
+        } else {
+          p.className = "error";
+          p.innerHTML = "Invalid email or password!";
+        }
+      }
+
+      btn.addEventListener("click", validate);
+    </script>
+  </body>
+</html>
